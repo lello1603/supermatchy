@@ -1,2 +1,0 @@
-# supermatchy
-matching platform
