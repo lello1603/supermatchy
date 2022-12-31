@@ -9,11 +9,13 @@
       <input type="file" name="image">
       <input type="submit" value="Send">
     </form>
-    {% for message, image in messages %}
-      {% if image %}
-        <img src="/{{ image }}">
-      {% endif %}
-      {{ message }}
+    {% for message, image_url in messages %}
+      <div class="message">
+        {{ message }}
+        {% if image_url %}
+          <img src="{{ image_url }}" alt="Chat image">
+        {% endif %}
+      </div>
     {% endfor %}
   </body>
 </html>
