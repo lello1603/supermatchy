@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Chat</title>
+  </head>
+  <body>
+    <form action="/" method="POST" enctype="multipart/form-data">
+      <input type="text" name="message" placeholder="Enter your message">
+      <input type="file" name="image">
+      <input type="submit" value="Send">
+    </form>
+    {% for message, image in messages %}
+      {% if image %}
+        <img src="/{{ image }}">
+      {% endif %}
+      {{ message }}
+    {% endfor %}
+  </body>
+</html>
